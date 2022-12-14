@@ -1,0 +1,38 @@
+{% extends 'books/base2.html' %} {% block tittle %}Details{% endblock %} 
+{%block mycontent%}
+<style>
+    .comment{
+        border:solid 1px;
+        padding: 20px 20px 20px 20px ;
+        border-style: outset;
+        border-color: rgb(190, 11, 11);
+        border: solid 2px;
+        background-color:rgb(255, 255, 255);
+        width: 20em;
+        height: 85%;
+        border-radius: 2em;
+        box-shadow: 0 0 2em rgb(0, 0, 0);
+      }
+    </style>
+<body style="background-color: hsl(248, 83%, 7%) ;">
+{% if user.is_authenticated %}
+<div class="comment">
+
+<h1 >Add Comment</h1>
+
+
+<form style="background-color:white ;" method="post" >
+    {%csrf_token%}
+   {{form}}
+   <input type="submit" value="Comment" class=" btn "  style="background-color: gold ; color: black"/>
+
+
+
+</form>
+</div>
+</div>
+
+{% endif %}
+  </body>
+    
+    {%endblock%}

@@ -1,0 +1,16 @@
+{% extends 'books/base2.html' %} {% block tittle %}Details{% endblock %} 
+
+
+{%block mycontent%}
+<h1 >Delete Category</h1>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+  <div><p>Are you Sure you want to delete Category"{{object}}"</p></div>
+   <button type="submit">Delete</button>
+
+
+</form>
+
+
+
+{%endblock%}

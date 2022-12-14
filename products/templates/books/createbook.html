@@ -1,0 +1,39 @@
+{% extends 'books/base2.html' %} {% block tittle %}Details{% endblock %} 
+{% load static %}
+
+<!-- <link rel="stylesheet" href="{% static 'products/core/styles/main2.css' %}"> -->
+
+
+{%block mycontent%}
+<style>
+.comment{
+    border:solid 1px;
+    padding: 20px 20px 20px 20px ;
+    border-style: outset;
+    border-color: rgb(190, 11, 11);
+    border: solid 2px;
+    background-color:rgb(255, 255, 255);
+    width: 20em;
+    height: 85%;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgb(0, 0, 0);
+  }
+</style>
+<body style="background-color:hsl(248, 83%, 7%) ;">
+    
+        
+   <div class="comment">
+<h1>Create New Post</h1>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+   {{form}}
+  
+   <input type="submit" value="Create" class=" btn "  style="background-color: gold ; color: black"/>
+
+
+</form>
+</div>
+</body>
+    
+    {%endblock%}
+    

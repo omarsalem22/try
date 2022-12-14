@@ -1,0 +1,16 @@
+{% extends 'books/base2.html' %} {% block tittle %}Details{% endblock %} 
+
+
+{%block mycontent%}
+<h1 >Delete Bad word</h1>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+  <div><p>Are you Sure you want to delete user</p></div>
+   <button type="submit">submit</button>
+
+
+</form>
+
+
+
+{%endblock%}

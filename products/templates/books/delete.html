@@ -1,0 +1,23 @@
+{% extends 'books/base2.html' %} {% block tittle %}Details{% endblock %} 
+
+
+{%block mycontent%}
+<style>
+  body{
+    background-color:hsl(248, 83%, 7%); 
+    color: aliceblue;
+
+  }
+</style>
+<h1 >Delete </h1>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+  <div><p>Are you Sure you want to delete Post"{{object}}"</p></div>
+   <button type="submit" class="btn btn-danger" >Delete</button>
+
+
+</form>
+
+
+
+{%endblock%}

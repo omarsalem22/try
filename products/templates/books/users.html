@@ -1,0 +1,51 @@
+{% extends 'books/base2.html' %} {% block tittle %}index page{% endblock %} 
+
+{%block mycontent%}
+<style>
+  .comment{
+    border:solid 1px;
+    padding: 20px 20px 20px 20px ;
+    border-style: outset;
+    border-color: gold;
+    background-color: white;
+    width: 40% ; 
+    border-radius: 1em ;
+
+  }
+  body{
+    background-color:hsl(248, 83%, 7%); 
+    /* background-image: url("./back6.jpg"); */
+
+  }
+  </style>
+<div class="comment"  >
+{% if user.is_staff %}
+
+{% for x in displayusers %}
+
+<div>
+  {% if not x.is_staff  %}
+  <h1 style="color:black" >{{x.username}}</h1>
+  {% else %}
+  <h1 style="color:red" >{{x.username}} </h1>
+  {% endif %}
+  {% if not x.is_staff  %}
+
+  
+  <a href="{% url 'dele' x.id  %}" class="btn btn-danger">delete</a>  
+  <a href="{% url 'lock' x.id  %}" class="btn btn-danger">lock</a>
+  <a href="{% url 'promote' x.id  %}" class="btn btn-primary">promote</a> 
+ 
+  <a href="{% url 'unlock' x.id  %}" class="btn btn-primary">unlock</a> 
+  
+
+ {% endif %}
+</div>
+
+
+{%  endfor %}
+
+</div>
+{% endif %}
+</div>
+{%endblock%}

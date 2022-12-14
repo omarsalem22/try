@@ -1,0 +1,39 @@
+{% extends 'books/base2.html' %} {% block tittle %}index page{% endblock %} 
+
+{%block mycontent%}
+<style>
+.card
+{
+  width: 18rem ;border-radius: 5%  ; background-color: hsl(248, 83%, 7%);
+  box-shadow: 0 0 1em gold ; align-items: center ;
+  display: inline-flex;
+ 
+
+}
+</style>
+
+<body style="background-color: hsl(248, 83%, 7%) ;">
+  
+
+<div style="margin-top: 40px ; " >
+{% for product in category_posts %}
+
+<div class="card"  >
+    <img style="border-radius: 10% ; border:  5px solid gold  ; width: 13.4em;  " src="{{product.get_img_url}}" class="card-img-top" alt="..." 
+    width="200" height="200"
+    >
+    <div class="card-body">
+      <h5 style="color: white ;" class="card-title">  Tiitle : {{product.tittle}}</h5>
+     
+      
+      <a href="{{product.get_show_url}}" class="btn " style="background-color: gold  ;color: black ;width: 100%;"> View</a> <br><br>
+      
+        
+
+    </div>
+</div>
+
+{%endfor%}
+
+</body>
+{%endblock%}

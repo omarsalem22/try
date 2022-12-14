@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+    
+  <link rel="stylesheet" href="{% static 'products/core/styles/regs.css' %}">
+     
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+
+<body>
+    
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+
+         
+        <svg class="bi " role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+           <div style="color: yellow">
+              <h1>
+             {{message}}
+            </h1>
+           </div>
+        </div>
+
+
+      {%endfor%}
+        <header>Registration</header>
+    <form method="post">
+        {% csrf_token %}
+
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>User Name</label>
+                            <input type="text" placeholder="Enter first name" required name="username">
+                        </div>
+
+         
+
+            <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter email" required name="email">
+                        </div>
+            <div class="input-field">
+                            <label>Password</label>
+                            <input type="password" placeholder="Enter Password" required name="password">
+                        </div>
+
+            <div class="input-field">
+                            <label>Confirm Password</label>
+                            <input type="password" placeholder="Confirm Password" required name="password2">
+                        </div>
+    
+                    </div>
+        </div>
+       
+        <input  class="form__btn" style="margin-top: 20px " type="submit" value="Register" ></input>
+        <div class="form__signup">
+            <p style="color:gray ;" >Have account ? </p><a style="color:gold ;" href="{% url 'login' %}">Login</a>
+         </div>
+
+            </div>
+        
+        </form>
+    </div>
+
+    <!-- <script src="re.js"></script> -->
+</body> 
+</html>

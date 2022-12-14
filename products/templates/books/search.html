@@ -1,0 +1,49 @@
+{% extends 'books/base2.html' %}  {% block title %}Search | {% endblock %}
+ {% block mycontent %}
+ <style>
+   .comment{
+    border:solid 1px;
+    padding: 20px 20px 20px 20px ;
+    border-style: outset;
+    border-color: rgb(190, 11, 11);
+    border: solid 2px;
+    background-color:rgb(255, 255, 255);
+    width: 20em;
+    height: 85%;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgb(0, 0, 0);
+  }
+  body{
+    background-color:hsl(248, 83%, 7%); 
+    /* background-image: url("./back6.jpg"); */
+
+  }
+
+  
+
+  </style>
+ </style>
+<body style="background-color: hsl(248, 83%, 7%) ;">
+  <div class="comment"  > 
+ 
+  
+ {% if query %}
+<div class="columns is-multiline mb-6">
+  <div class="column is-12 has-text-centered mt-6 mb-6">
+    <h2 class="is-size-3">Search</h2>
+    <h3>You searched for "{{ query }}"</h3>
+    <br/>
+    {% for item in items %}
+
+     <a href="{% url 'detailes' item.id %} ">{{item}} </a> 
+    <br>
+    {% endfor %}
+  </div>
+  {% else %}
+  <h1>YOU FORGOT TO SEARCH</h1>
+  {% endif %}
+</div> 
+</div>
+</body>
+
+{% endblock %}

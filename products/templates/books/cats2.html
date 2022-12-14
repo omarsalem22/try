@@ -1,0 +1,48 @@
+{% extends 'books/base2.html' %} {% block tittle %}catecory page{% endblock %} 
+
+{%block mycontent%}
+<h1>  <a href="{%url 'createcat'  %}" class="btn btn-primary">Create category</a></h1>
+
+
+
+
+
+    
+  <div  style="margin-top: 40px ; " >
+  
+     
+{% for cat in displaycats %}
+<body style="background-color:hsl(248, 83%, 7%) ;">
+  
+
+ 
+
+
+  
+ 
+   <div class="card" style="width: 18rem; display: inline-block">
+ 
+     <div class="card-body">
+      <img class="card-img-top" src="{{ cat.get_img_cat }}" height="200px" alt="Card image cap">
+      
+       <h5 class="card-title"> category name : {{cat.name}}</h5>
+
+       
+      
+       
+       <!-- <a href="{%url 'catdetailss' cat.id %}" class="btn btn-primary">Category Details</a>  -->
+       <a class="btn btn-primary" href="{% url 'edietcat' cat.id %}">Edit</a>
+
+       <a  class="btn btn-danger" href="{% url 'delcat' cat.id %}">Delete</a>
+       <br><br>
+       
+    
+ 
+     </div>
+   </div>
+
+{%  endfor %}
+
+
+</body>
+{%endblock%}

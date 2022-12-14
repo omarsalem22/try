@@ -1,0 +1,53 @@
+{% extends 'books/base2.html' %} {% block tittle %}index page{% endblock %}
+{% load static %}
+{%block mycontent%}
+<style>
+  .comment{
+    border:solid 1px;
+    padding: 20px 20px 20px 20px ;
+    border-style: outset;
+    border-color: rgb(190, 11, 11);
+    border: solid 2px;
+    background-color:rgb(255, 255, 255);
+    width: 20em;
+    height: 85%;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgb(0, 0, 0);
+  }
+  body{
+    background-color:hsl(248, 83%, 7%); 
+    /* background-image: url("./back6.jpg"); */
+
+  }
+  .btn{
+    color: black;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  padding: .5em;
+  border-radius: 1em;
+  margin-top: 0.1em;
+  cursor: pointer;
+  width:  10%;
+  
+}
+  </style>
+   <div class="comment"  > 
+
+ {% for x in forbidden_words %}
+
+<div>
+  <h1>{{x.forbidden_word}}</h1>
+<pre>
+  <a style="color:red ;" href="{% url 'delete_bad' x.id  %}" >Delete</a>     <a  href="{% url 'Updatcat' x.id  %}" >Edit</a>  
+</pre>
+  {% endfor %}</div>
+</div> </div> <br>
+<br> 
+<br>
+
+<a href="{%url 'addforb'%}" class="btn" style="background-color:rgb(238, 205, 15) "><h3>Add</h3></a> <br><br>
+
+
+{%endblock%}

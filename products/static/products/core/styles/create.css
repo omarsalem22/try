@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+:root{
+    --font: 'Poppins', sans-serif;
+  
+    --color: rgb(238, 205, 15);
+    --bg-color: #f4f4f4;
+  }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+    font-family: var(--font);
+    color: var(--bg-color);
+  
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+      background-color :black;
+   
+
+    
+  }
+
+
+.wrapper{
+    position: relative;
+    height: 80;
+    width: 20em;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 0 15px;
+    background-color: rgba(255, 255, 255, 0.041);
+    box-shadow: 0 5px 10px black;
+
+}
+
+
+.wrapper .title{
+    font-family: var(--font);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color);
+}
+
+.wrapper .form{
+  width: 100%;
+}
+
+.wrapper .form .inputfield{
+  margin-bottom: 15px;
+}
+
+.wrapper .form .inputfield label{
+   width: 200px;
+   color: #fff;
+   margin-right: 10px;
+  font-size: 14px;
+}
+
+.wrapper .form .inputfield .input,
+.wrapper .form .inputfield .textarea{
+  width: 100%;
+  outline: none;
+  border: 1px solid rgb(238, 205, 15);
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+.wrapper .form .input, select{
+    width: 100%;
+    outline: none;
+   
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-weight: 400;
+    color: rgb(15, 15, 15);
+
+}
+
+.wrapper input :focus,
+.wrapper select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.wrapper select,
+.wrapper input[type="date"]{
+    color: #333;
+}
+
+.wrapper .form .inputfield .textarea{
+  width: 100%;
+  height: 125px;
+  resize: none;
+}
+
+
+
+.wrapper .form .inputfield .btn{
+    display: inline-block;
+    width: 30%;
+    height: 2.3em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--color);
+    border: none;
+    border-radius: 1em;
+    color: black;
+    padding: 0.5em 0;
+    margin: 1em 0;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.wrapper .form .inputfield .btn:hover{
+    color: var(--color);
+    background-color: #fff;
+    border: 2px solid var(--color);  
+}
+
+.wrapper .form .inputfield:last-child{
+  margin-bottom: 0;
+}
+
+@media (max-width:420px) {
+  .wrapper .form .inputfield{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .form .inputfield label{
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inputfield.terms{
+    flex-direction: row;
+  }
+}

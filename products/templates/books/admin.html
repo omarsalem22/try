@@ -1,0 +1,45 @@
+{% extends 'books/base2.html' %} {% block tittle %}admin page{% endblock %} 
+
+
+{%block mycontent%}
+<style>
+  .omar{
+    border:solid 1px;
+    padding: 20px 20px 20px 20px ;
+    border-style: outset;
+    border-color: rgb(190, 11, 11);
+    border: solid 2px;
+    background-color:rgb(255, 255, 255);
+    width: 20em;
+    height: 85%;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgb(0, 0, 0);
+  }
+  body{
+    background-color:hsl(248, 83%, 7%); 
+    /* background-image: url("./back6.jpg"); */
+
+  }
+
+ 
+</style>
+
+<div class="container">
+<div class="omar" >
+  {% if user.is_staff %}
+  <a href="{%url 'users'%}" class="btn" style="background-color:rgb(238, 205, 15) "><b> Users</b></a> <br><br>
+  <a href="{%url 'posts'%}"class="btn" style="background-color:rgb(238, 205, 15) "><b> Posts </b></a> <br><br>
+  <a href="{%url 'showcats'%}" class="btn" style="background-color:rgb(238, 205, 15) "><b>Categories </b></a> <br><br>
+
+  
+  <a href="{%url 'forbiddenshow'%}"class="btn" style="background-color:rgb(238, 205, 15) "><b>Forbiden Words </b></a> <br><br>
+
+ 
+  
+  
+  {% endif %}
+</div>
+</div>
+
+{% endblock %}
+
