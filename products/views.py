@@ -1,8 +1,8 @@
 
 
 from django.contrib import messages
-import re
-from turtle import pos
+
+
 from django.db.models import Q
 from django.core.mail import send_mail
 from django.conf import settings
@@ -28,6 +28,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.core.exceptions import ValidationError
 from django.core.paginator import Paginator
+from better_profanity import profanity
+
+
 
 
 
@@ -319,9 +322,6 @@ class dislike(LoginRequiredMixin,View):
         
         return HttpResponseRedirect(next)
 
-    
-
-
 class Createcatview(CreateView):
     form_class=categoryform
     template_name= "books/createcat.html"
@@ -444,9 +444,6 @@ class Updatbaddsview(UpdateView):
 def  listall(request): 
 
   booklist=book.objects.order_by('created_at')
-
-  
-
 
   context={"booklist":booklist}
   return render   (request,"books/posts.html",context)
